@@ -1,8 +1,7 @@
 import axios from "axios"
 import { useEffect } from "react"
-import Renderquiz from "./Renderquiz"
-// import form_ki_setting from "../App"
-// import formData from "./Startpage"
+import Parentbox from "./Parentbox"
+import "./styles/parent.css"
 
 const Quizpage = (props) => {
   const { baaphu } = props
@@ -25,7 +24,7 @@ const Quizpage = (props) => {
   return (
     <div>
       <h1>Quizz App</h1>
-      <Renderquiz/>
+      <Parentbox className="parentbox"/>
     </div>
   )
 }
