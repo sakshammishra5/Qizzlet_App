@@ -9,7 +9,7 @@ const Parentbox = (props) => {
 const yo=result.map((item)=>item=[item.correct_answer])
 const bo=result.map((item,indx)=>yo[indx]=[item.incorrect_answers])
 console.log(bo)
-
+// mdddddddddddddddddddddddddddddd
   return (
     <>
       {result.map((item) =>
