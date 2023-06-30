@@ -15,7 +15,7 @@ const Startpage = (props) => {
             }
         })
     }
-    console.log(settingForm)
+    // console.log(settingForm)
 
 
     function onSubmitHandler(ev) {

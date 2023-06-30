@@ -7,20 +7,19 @@ const Parentbox = (props) => {
 
 
 
-let newArr=[]
-  for(let i=0;i<result.length;i++){
-      console.log(result[i].incorrect_answers.splice(Math.floor(Math.random()*4),0,result[i].correct_answer))
-    // newArr.push(result[i].incorrect_answers.push(result[i].correct_answer))
+
+  for (let i = 0; i < result.length; i++) {
+    result[i].incorrect_answers.splice(Math.floor(Math.random() * 4), 0, result[i].correct_answer)
   }
 
-  console.log(result)
-  // console.log(newArr)
+  // console.log(result)
+  // console.log(newArr)                          
 
   // const filteredArray = result.map((item) => ({
   //   correct_answer: item.correct_answer,
   //   incorrect_answers: item.incorrect_answers
   // }));
-  
+
   // const filteredArray = result.map((item) => ({
   //   [item.correct_answer]: true,
   //   ...item.incorrect_answers.reduce((acc, incorrectAnswer) => {
@@ -45,7 +44,7 @@ let newArr=[]
       {result.map((item) =>
       (<div>
         <Question question={item.question} result={result} />
-        <Options incorrect_answers={item.incorrect_answers} />
+        <Options incorrect_answers={item.incorrect_answers} correct_answer={item.correct_answer} />
       </div>))}
     </>
   )

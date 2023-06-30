@@ -1,12 +1,16 @@
-.ans{
+.optn{
     border: 1px solid black;
     background-color: rgba(176, 242, 160, 0.755);
 }
 
-.ans:hover{
+.optn:hover{
     background-color: rgb(173, 131, 212);
 }
 
-.ans:active{
+.optn:active{
     background-color: rgb(57, 127, 233);
+}
+
+.selected_ans{
+    background-color: red;
 }

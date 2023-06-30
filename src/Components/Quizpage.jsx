@@ -14,7 +14,7 @@ const Quizpage = (props) => {
  async function apicalling(){
   axios.get(`https://opentdb.com/api.php?amount=${globalThis.FormData.question}&difficulty=${globalThis.FormData.difficulty}&type=${globalThis.FormData.types}`)
   .then(function (response) {
-    console.log(response.data.results)
+    // console.log(response.data.results)
   })
   .catch(function (error) {
     console.log(error);
