@@ -5,7 +5,7 @@ const Answer = (props) => {
   const {id,value,picked, correct_answer, incorrect_answers,handleonclick } = props
 
   return (
-    <div className='optn' id={id} onClick={handleonclick} picked={picked.toString()}>
+    <div className='optn' id={id} onClick={handleonclick}>
       {value}
     </div>
   )
