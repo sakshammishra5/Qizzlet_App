@@ -1,10 +1,9 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Answer from "./answer"
 
 
 const Options = (props) => {
   const { incorrect_answers, correct_answer } = props
-
  
   
   return (

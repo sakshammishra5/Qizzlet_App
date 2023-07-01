@@ -2,21 +2,33 @@ import { useState } from 'react'
 import './styles/Particularans.css'
 
 const Answer = (props) => {
-  const{optn,correct_answer,incorrect_answers}=props
+  const { optn, correct_answer, incorrect_answers } = props
   const [selected, setselected] = useState('not_selected')
-  
-  
+
   function Handleonclick(ev) {
-    // console.log(ev.target.attributes.selectedornot.value)
-    // incorrect_answers.map((item)=>console.log(item))
-    // console.log(ev.target.parentElement.childNodes[0].attributes.selectedornot.value)
-    // console.log(ev.target.parentElement.childNodes[0].NodeList)
+    if (ev.target.className == "optn") {
+      console.log( ev.target.attributes.selectedornot.value)
+      ev.target.attributes.selectedornot.value=setselected("selected_ans")
+    }
+    addclass(ev)
   }
+  
+  function addclass(ev) {
+    if (selected == "selected_ans") {
+      ev.target.classList.add("selected_ans")
+    }
+    else if(selected=="not_selected"){
+      ev.target.classList.remove("selected_ans")
+    }
+
+  }
+
   return (
     <div className='optn' selectedornot={selected} onClick={Handleonclick} >
-        {optn}
+      {optn}
     </div>
   )
 }
 
-export default Answer
+
+  export default Answer

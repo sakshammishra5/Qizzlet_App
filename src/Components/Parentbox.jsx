@@ -11,6 +11,19 @@ const Parentbox = (props) => {
   for (let i = 0; i < result.length; i++) {
     result[i].incorrect_answers.splice(Math.floor(Math.random() * 4), 0, result[i].correct_answer)
   }
+  
+  return (
+    <>
+      {result.map((item) =>
+      (<div>
+        <Question question={item.question} result={result} />
+        <Options incorrect_answers={item.incorrect_answers} correct_answer={item.correct_answer} />
+      </div>))}
+    </>
+  )
+}
+
+export default Parentbox
 
   // console.log(result)
   // console.log(newArr)                          
@@ -38,16 +51,3 @@ const Parentbox = (props) => {
   // });
 
   // console.log(updatedResult)
-
-  return (
-    <>
-      {result.map((item) =>
-      (<div>
-        <Question question={item.question} result={result} />
-        <Options incorrect_answers={item.incorrect_answers} correct_answer={item.correct_answer} />
-      </div>))}
-    </>
-  )
-}
-
-export default Parentbox
