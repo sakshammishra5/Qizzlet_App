@@ -5,12 +5,20 @@ import Answer from "./answer"
 
 const Options = (props) => {
   const { incorrect_answers, correct_answer} = props
-  const [selected, setSelected] = useState(false)
-
+  const [selected, setselected] = useState(optnArr)
+  
+  
   function handleonclick(ev){
+    setselected((prevstate)=>prevstate.map(item=>{
+     return item.id===ev.target.id?{...item,picked:"true"}:item
+    }))
    }
-    
-
+   
+   function addclass(){
+    if(selected.picked==="true"){
+      return "selected"
+    }
+   }
   
   let optnArr=incorrect_answers.map((item, indx) =>
    <Answer
@@ -20,7 +28,7 @@ const Options = (props) => {
     correct_answer={correct_answer} 
     incorrect_answers={incorrect_answers} 
     handleonclick={handleonclick}
-    picked={selected}
+    picked="false"
      />)
   
   return (
