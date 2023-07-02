@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { nanoid } from 'nanoid'
 import Answer from "./answer"
+import './styles/Particularans.css'
 
 
 const Options = (props) => {
@@ -10,18 +11,21 @@ const Options = (props) => {
   
   
   function handleonclick(ev){
+    console.log(ev.target)
     setselected((prevstate)=>prevstate.map(item=>{
      return item.id===ev.target.id?{...item,picked:"true"}:item
     }))
     addclass()
    }
 
-   
    function addclass(){
   setselected((prevstate)=>prevstate.map(item=>{
     return item.picked==="true"?{...item,className:"select_hogya"}:item
    }))
 }
+
+
+
    optnArr=incorrect_answers.map((item, indx) =>
    <Answer
     key={indx}

@@ -6,7 +6,7 @@ import "./styles/parent.css"
 const Quizpage = (props) => {
   const { baaphu } = props
 
-  console.log(globalThis.FormData)
+  // console.log(globalThis.FormData)
   useEffect(() => {
     apicalling()
   }, [])
